@@ -78,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         noButton.style.backgroundColor = '#FF5733'; // Cambia el color del botón "No"
       }
 
-     
+      
+     }
+   
 
   // Event listener para el botón "Sí"
   document.getElementById('yes-button').addEventListener('click', function() {
