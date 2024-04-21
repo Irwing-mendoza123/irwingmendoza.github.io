@@ -1,0 +1,144 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: black; /* Fondo negro */
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container img.world {
+  width: 200px; /* Tamaño del mundo */
+  height: auto;
+  animation: spin 10s linear infinite; /* Animación de rotación */
+}
+.romantic-phrase {
+  margin-bottom: 20px; /* Puedes ajustar este valor según la separación que desees */
+}
+
+
+.message {
+  font-size: 24px;
+  margin-top: 20px;
+  display: none;
+  text-align: center;
+  color: white; /* Texto blanco */
+}
+.gif2-container {
+  position: fixed;
+  top: 10px; /* Distancia desde la parte superior */
+  right: 10px; /* Distancia desde el lado derecho */
+}
+
+.gif2 {
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+}
+.decision-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.decision-button:hover {
+  background-color: #45a049; /* Darker Green */
+}
+
+
+
+.romantic-phrase {
+  font-size: 40px;
+  color: white; /* Texto blanco */
+  margin-bottom: 40px;
+}
+.romantic-phrase2 {
+  font-size: 20px;
+  color: white; /* Texto blanco */
+  margin-bottom: 50px;
+}
+.sub-phrase {
+  font-size: 28px;
+  color: white; /* Texto blanco */
+}
+
+.heart-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes falling-hearts {
+  0% {
+    transform: translateY(-50px) rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.heart-emoji {
+  position: absolute;
+  left: calc(100vw * random());
+  top: calc(100vh * random());
+  color: #ff0000; /* Color rojo */
+  font-size: calc(10px + 20px * random());
+  animation: falling-hearts 5s linear infinite;
+}
+
+.heart-letter {
+  animation: none;
+}
+
+.message span {
+  display: inline-block;
+  opacity: 0;
+  animation: appear 1s ease forwards;
+  font-size: 15px;
+  color: red; /* Color rojo */
+}
+.message p {
+  font-size: 17px; /* Reducir el tamaño del texto de la frase */
+}
+
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
