@@ -78,16 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         noButton.style.backgroundColor = '#FF5733'; // Cambia el color del botón "No"
       }
 
-      // Deshabilita los botones después de tomar una decisión
-      yesButton.disabled = true;
-      noButton.disabled = true;
-
-      decisionMade = true; // Marca que se ha tomado una decisión
-
-      // Guardar la decisión en localStorage
-      localStorage.setItem('decision', decision);
-    }
-  }
+     
 
   // Event listener para el botón "Sí"
   document.getElementById('yes-button').addEventListener('click', function() {
