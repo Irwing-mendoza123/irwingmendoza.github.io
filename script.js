@@ -73,24 +73,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (decision === 'yes') {
         yesButton.style.backgroundColor = '#4CAF50'; // Cambia el color del botón "Sí"
-        alert("Te amooooooooooo. Sabía que ibas a decir que sí"); // Mensaje estilo muy profesional
+        alert("Te amo, sabía que ibas a decir que sí."); // Mensaje para respuesta afirmativa
       } else if (decision === 'no') {
         noButton.style.backgroundColor = '#FF5733'; // Cambia el color del botón "No"
+        alert("No se aceptan respuestas negativas."); // Mensaje para respuesta negativa
       }
 
-          // Deshabilita los botones después de tomar una decisión
-          yesButton.disabled = true;
-          noButton.disabled = true;
-    
-          decisionMade = true; // Marca que se ha tomado una decisión
-    
-          // Guardar la decisión en localStorage
-          localStorage.setItem('decision', decision);
-        
-      }
-    
-     }
-   
+      // Deshabilita los botones después de tomar una decisión
+      yesButton.disabled = true;
+      noButton.disabled = true;
+
+      decisionMade = true; // Marca que se ha tomado una decisión
+
+      // Guardar la decisión en localStorage
+      localStorage.setItem('decision', decision);
+    }
+  }
 
   // Event listener para el botón "Sí"
   document.getElementById('yes-button').addEventListener('click', function() {
@@ -137,6 +135,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const heartEmojis = document.querySelectorAll('.heart-emoji');
+
+  heartEmojis.forEach(function(heart) {
+    const size = Math.random() * 30 + 10; // Tamaño aleatorio
+    const duration = Math.random() * 3 + 2; // Duración de la animación aleatoria
+    const delay = Math.random() * 5; // Retardo aleatorio
+    const left = Math.random() * container.offsetWidth; // Posición horizontal aleatoria
+    const top = Math.random() * container.offsetHeight; // Posición vertical aleatoria
+
+    heart.style.left = left + 'px';
+    heart.style.top = top + 'px';
+    heart.style.width = size + 'px';
+    heart.style.height = size + 'px';
+    heart.style.animationDuration = duration + 's';
+    heart.style.animationDelay = delay + 's';
+  });
+});
 
   heartEmojis.forEach(function(heart) {
     const size = Math.random() * 30 + 10; // Tamaño aleatorio
